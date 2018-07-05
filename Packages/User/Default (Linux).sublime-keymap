@@ -2,6 +2,11 @@
     { "keys": ["alt+j"],"command": "move", "args": {"by": "words", "forward": false} },
     { "keys": ["alt+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
 
+    { "keys": ["alt+i"], "command": "move", "args": {"by": "lines", "forward": false} },
+    { "keys": ["alt+,"], "command": "move", "args": {"by": "lines", "forward": true} },
+    { "keys": ["shift+alt+i"], "command": "move", "args": {"by": "lines", "forward": false, "extend":true} },
+    { "keys": ["shift+alt+,"], "command": "move", "args": {"by": "lines", "forward": true, "extend":true} },
+
     { "keys": ["alt+shift+j"], "command": "move", "args": {"by": "words", "forward": false, "extend": true} },
     { "keys": ["alt+shift+l"], "command": "move", "args": {"by": "word_ends", "forward": true, "extend": true} },
     { "keys": ["alt+k"], "command": "left_delete" },
@@ -18,8 +23,6 @@
     { "keys": ["ctrl+shift+a"], "command": "select_all" },
     { "keys": ["alt+shift+z"], "command": "move_to", "args": {"to": "bol", "extend": true} },
     { "keys": ["alt+shift+c"], "command": "move_to", "args": {"to": "eol", "extend": true} },
-    { "keys": ["alt+w"], "command": "move", "args": {"by": "lines", "forward": false} },
-    { "keys": ["alt+x"], "command": "move", "args": {"by": "lines", "forward": true} },
     { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
     { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["ctrl+shift+space"], "command": "move", "args": {"by": "characters", "forward": false} },
