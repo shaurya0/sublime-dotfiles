@@ -3,14 +3,6 @@
 
 [
     {
-        "caption": "File",
-        "mnemonic": "",
-        "id": "file",
-        "children":
-        [
-        ]
-    },
-    {
         "caption": "Edit",
         "mnemonic": "",
         "id": "edit",
@@ -54,14 +46,6 @@
         "caption": "Tools",
         "mnemonic": "",
         "id": "tools",
-        "children":
-        [
-        ]
-    },
-    {
-        "caption": "Project",
-        "mnemonic": "",
-        "id": "project",
         "children":
         [
         ]
