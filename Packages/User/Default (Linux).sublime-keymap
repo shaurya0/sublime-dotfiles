@@ -222,4 +222,6 @@
     },
     { "keys": ["shift+pageup"], "command": "terminus_keypress", "args": {"key": "pageup", "shift": true}, "context": [{"key": "terminus_view"}] },
     { "keys": ["shift+pagedown"], "command": "terminus_keypress", "args": {"key": "pagedown", "shift": true}, "context": [{"key": "terminus_view"}] },
+    { "keys": ["ctrl+k", "ctrl+c"], "command": "show_at_center" },
+
 ]
