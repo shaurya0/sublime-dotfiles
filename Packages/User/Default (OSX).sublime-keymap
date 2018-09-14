@@ -198,7 +198,7 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+shift+minus"], "command": "jump_forward" },
 
 	{ "keys": ["ctrl+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse": false} },
-	{ "keys": ["ctrl+shift+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse": true} },
+
 	{ "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
 	{ "keys": ["ctrl+alt+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["ctrl+alt+e"], "command": "replace_next" },
@@ -923,4 +923,76 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+x"], "command": "cut" },
 	{ "keys": ["ctrl+c"], "command": "copy" },
 	{ "keys": ["ctrl+v"], "command": "paste" },
+
+	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+	{ "keys": ["alt+minus"], "command": "jump_back" },
+	// { "keys": ["ctrl+shift+minus"], "command": "jump_forward" },
+    {
+        "command": "navigate_to_definition",
+        "keys": ["ctrl+t", "ctrl+t"]
+    },
+
+    {
+        "command": "search_for_definition",
+        "keys": ["ctrl+t", "ctrl+y"]
+    },
+    {
+        "command": "jump_prev",
+        "keys": ["ctrl+t", "ctrl+b"]
+    },
+    {
+        "command": "rebuild_tags",
+        "keys": ["ctrl+t", "ctrl+r"]
+    },
+    {
+        "command": "show_symbols",
+        "context": [
+            {
+                "key": "selector",
+                "match_all": true,
+                "operand": "source -source.css",
+                "operator": "equal"
+            }
+        ],
+        "keys": ["alt+s"]
+    },
+    {
+        "command": "show_symbols",
+        "args": {"type": "multi"},
+        "context": [
+            {
+                "key": "selector",
+                "match_all": true,
+                "operand": "source -source.css",
+                "operator": "equal"
+            }
+        ],
+        "keys": ["alt+shift+s"]
+    },
+    {
+        "command": "show_symbols",
+        "args": {"type": "lang"},
+        "context": [
+            {
+                "key": "selector",
+                "match_all": true,
+                "operand": "source -source.css",
+                "operator": "equal"
+            }
+        ],
+        "keys": ["ctrl+alt+shift+s"]
+    },
+    { // override current default
+        "command": "transpose",
+        "context": [
+            { "key": "num_selections", "operator": "not_equal", "operand": 1 }
+        ],
+        "keys": ["ctrl+t"]
+    },
+
+    { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+
+
 ]
