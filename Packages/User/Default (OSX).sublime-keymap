@@ -23,6 +23,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+y"], "command": "redo_or_repeat" },
 	{ "keys": ["ctrl+u"], "command": "soft_undo" },
 	{ "keys": ["ctrl+shift+u"], "command": "soft_redo" },
+	{ "keys": ["ctrl+k", "ctrl+u"], "command": "upper_case" },
+	{ "keys": ["ctrl+k", "ctrl+l"], "command": "lower_case" },
 
 	{ "keys": ["ctrl+x"], "command": "cut" },
 	{ "keys": ["ctrl+c"], "command": "copy" },
@@ -186,7 +188,7 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
 	{ "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-	{ "keys": ["ctrl+ctrl+p"], "command": "prompt_select_workspace" },
+	{ "keys": ["ctrl+p"], "command": "prompt_select_workspace" },
 	{ "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 	{ "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
 	{ "keys": ["f12"], "command": "goto_definition" },
@@ -202,14 +204,12 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find", "reverse": false} },
 	{ "keys": ["ctrl+alt+f"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
 	{ "keys": ["ctrl+alt+e"], "command": "replace_next" },
-	{ "keys": ["ctrl+g"], "command": "find_next" },
 	{ "keys": ["ctrl+shift+g"], "command": "find_prev" },
 	{ "keys": ["ctrl+e"], "command": "slurp_find_string" },
 	{ "keys": ["ctrl+shift+e"], "command": "slurp_replace_string" },
 
 	{ "keys": ["alt+ctrl+g"], "command": "find_under" },
 	{ "keys": ["shift+alt+ctrl+g"], "command": "find_under_prev" },
-	{ "keys": ["ctrl+ctrl+g"], "command": "find_all_under" },
 
 	{ "keys": ["ctrl+shift+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
 	{ "keys": ["f4"], "command": "next_result" },
@@ -219,8 +219,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+f6"], "command": "next_misspelling" },
 	{ "keys": ["ctrl+shift+f6"], "command": "prev_misspelling" },
 
-	{ "keys": ["ctrl+ctrl+up"], "command": "swap_line_up" },
-	{ "keys": ["ctrl+ctrl+down"], "command": "swap_line_down" },
+	{ "keys": ["ctrl+up"], "command": "swap_line_up" },
+	{ "keys": ["ctrl+down"], "command": "swap_line_down" },
 
 	{ "keys": ["ctrl+backspace"], "command": "delete_word", "args": { "forward": false, "sub_words": true } },
 	{ "keys": ["ctrl+delete"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
@@ -573,7 +573,6 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+7"], "command": "select_by_index", "args": { "index": 6 } },
 	{ "keys": ["ctrl+8"], "command": "select_by_index", "args": { "index": 7 } },
 	{ "keys": ["ctrl+9"], "command": "select_by_index", "args": { "index": 8 } },
-	{ "keys": ["ctrl+0"], "command": "select_by_index", "args": { "index": 9 } },
 
 	{ "keys": ["f2"], "command": "next_bookmark" },
 	{ "keys": ["shift+f2"], "command": "prev_bookmark" },
@@ -703,11 +702,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+backspace"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard BOL.sublime-macro"} },
 	// ctrl+delete isn't a built in command, but makes sense anyway
 	{ "keys": ["ctrl+delete"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
-	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete to Hard EOL.sublime-macro"} },
+	{ "keys": ["ctrl+k"]},
 	{ "keys": ["ctrl+l"], "command": "show_at_center" },
-	{ "keys": ["ctrl+o"], "command": "insert_snippet", "args": { "contents": "$0\n" } },
-	{ "keys": ["ctrl+ctrl+d"], "command": "noop" },
-	{ "keys": ["ctrl+ctrl+shift+d"], "command": "noop" },
 
 	// HTML, XML close tag
 	{ "keys": ["/"], "command": "close_tag", "args": { "insert_slash": true }, "context":
@@ -994,5 +990,11 @@ and don't need to be repeated here. Anything listed here will take precedence, h
     { "keys": ["ctrl+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
     { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
 
-
+        { "keys": ["alt+t"], "command": "toggle_terminus_panel" },
+     {
+        "keys": ["ctrl+alt+t"], "command": "terminus_open", "args": {
+            "config_name": "Default",
+            "cwd": "${file_path:${folder}}"
+        }
+},
 ]

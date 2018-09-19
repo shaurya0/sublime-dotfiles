@@ -7,7 +7,7 @@
 	"ensure_newline_at_eof_on_save": false,
 	"font_face": "Source Code Pro",
 	"font_options": "subpixel_antialias",
-	"font_size": 16,
+	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -45,5 +45,8 @@
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
-	"wide_caret": true
+	"wide_caret": true,
+	"preview_on_click": false,
+	"animation_enabled": false,
+	"tree_animation_enabled": false,
 }
