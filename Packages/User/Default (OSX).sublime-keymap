@@ -536,8 +536,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 			]
 		}
 	},
-	{ "keys": ["ctrl+1"], "command": "focus_group", "args": { "group": 0 } },
-	{ "keys": ["ctrl+2"], "command": "focus_group", "args": { "group": 1 } },
+	{ "keys": ["alt+left"], "command": "focus_group", "args": { "group": 0 } },
+	{ "keys": ["alt+right"], "command": "focus_group", "args": { "group": 1 } },
 	{ "keys": ["ctrl+3"], "command": "focus_group", "args": { "group": 2 } },
 	{ "keys": ["ctrl+4"], "command": "focus_group", "args": { "group": 3 } },
 	{ "keys": ["ctrl+5"], "command": "focus_group", "args": { "group": 4 } },
@@ -563,16 +563,6 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+k", "ctrl+right"], "command": "focus_neighboring_group" },
 	{ "keys": ["ctrl+k", "ctrl+shift+left"], "command": "move_to_neighboring_group", "args": {"forward": false} },
 	{ "keys": ["ctrl+k", "ctrl+shift+right"], "command": "move_to_neighboring_group" },
-
-	{ "keys": ["ctrl+1"], "command": "select_by_index", "args": { "index": 0 } },
-	{ "keys": ["ctrl+2"], "command": "select_by_index", "args": { "index": 1 } },
-	{ "keys": ["ctrl+3"], "command": "select_by_index", "args": { "index": 2 } },
-	{ "keys": ["ctrl+4"], "command": "select_by_index", "args": { "index": 3 } },
-	{ "keys": ["ctrl+5"], "command": "select_by_index", "args": { "index": 4 } },
-	{ "keys": ["ctrl+6"], "command": "select_by_index", "args": { "index": 5 } },
-	{ "keys": ["ctrl+7"], "command": "select_by_index", "args": { "index": 6 } },
-	{ "keys": ["ctrl+8"], "command": "select_by_index", "args": { "index": 7 } },
-	{ "keys": ["ctrl+9"], "command": "select_by_index", "args": { "index": 8 } },
 
 	{ "keys": ["f2"], "command": "next_bookmark" },
 	{ "keys": ["shift+f2"], "command": "prev_bookmark" },
@@ -755,9 +745,12 @@ and don't need to be repeated here. Anything listed here will take precedence, h
     { "keys": ["f12"], "command": "goto_definition"},
     { "keys": ["alt+up"], "command": "swap_line_up" },
     { "keys": ["alt+down"], "command": "swap_line_down" },
-    { "keys": ["ctrl+,"], "command": "insert", "args": {"characters": "\n"} },
+    { "keys": ["ctrl+,"], "command": "enter"},
 
-    { "keys": ["ctrl+,"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+
+
+
+    { "keys": ["ctrl+."], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
     { "keys": ["ctrl+i"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
 
     { "keys": ["ctrl+,"], "command": "commit_completion", "context":
@@ -767,21 +760,21 @@ and don't need to be repeated here. Anything listed here will take precedence, h
         ]
     },
 
-    { "keys": ["("], "command": "insert_snippet", "args": {"contents": "( $0 )"}, "context":
-      [
-        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
-        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "source.c++" },
-        { "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
-      ]
-    },
-    { "keys": ["("], "command": "insert_snippet", "args": {"contents": "( ${0:$SELECTION} )"}, "context":
-      [
-        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
-        { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "source.c++" }
-      ]
-    },
+    // { "keys": ["("], "command": "insert_snippet", "args": {"contents": "( $0 )"}, "context":
+    //   [
+    //     { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+    //     { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+    //     { "key": "selector", "operator": "equal", "operand": "source.c++" },
+    //     { "key": "following_text", "operator": "regex_contains", "operand": "^(?:\t| |\\)|]|;|\\}|$)", "match_all": true }
+    //   ]
+    // },
+    // { "keys": ["("], "command": "insert_snippet", "args": {"contents": "( ${0:$SELECTION} )"}, "context":
+    //   [
+    //     { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+    //     { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
+    //     { "key": "selector", "operator": "equal", "operand": "source.c++" }
+    //   ]
+    // },
     { "keys": ["alt+space"], "command": "auto_complete" },
     { "keys": ["alt+space"], "command": "replace_completion_with_auto_complete", "context":
         [
@@ -996,5 +989,42 @@ and don't need to be repeated here. Anything listed here will take precedence, h
             "config_name": "Default",
             "cwd": "${file_path:${folder}}"
         }
-},
+	},
+	{
+		"keys": ["alt+shift+1"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1]]
+		}
+	},
+	{
+		"keys": ["alt+shift+2"],
+		"command": "set_layout",
+		"args":
+		{
+			"cols": [0.0, 0.5, 1.0],
+			"rows": [0.0, 1.0],
+			"cells": [[0, 0, 1, 1], [1, 0, 2, 1]]
+		}
+	},
+	{ "keys": ["ctrl+k", "shift+up"], "command": "carry_file_to_pane", "args": {"direction": "up"} },
+	{ "keys": ["ctrl+k", "shift+right"], "command": "carry_file_to_pane", "args": {"direction": "right"} },
+	{ "keys": ["ctrl+k", "shift+down"], "command": "carry_file_to_pane", "args": {"direction": "down"} },
+	{ "keys": ["ctrl+k", "shift+left"], "command": "carry_file_to_pane", "args": {"direction": "left"} },
+
+	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
+	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
+	{ "keys": ["enter"], "command": "commit_completion", "context":
+		[
+			{ "key": "auto_complete_visible" },
+			{ "key": "setting.auto_complete_commit_on_tab", "operand": false }
+		]
+	},
+	{ "keys": ["shift+f12"], "command": "ecc_goto_declaration"},
+	{ "keys": ["ctrl+b"], "command": "build",
+			"context": [{"key": "build_fake", "operator":"equal", "operand":true}]
+	},
 ]
