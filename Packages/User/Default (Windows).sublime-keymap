@@ -1130,7 +1130,53 @@
 	{ "keys": ["alt+s"], "command": "save", "args": { "async": true } },
 	{ "keys": ["alt+h"], "command": "expand_selection", "args": {"to": "brackets"} },
 	{ "keys": ["alt+shift+d"], "command": "duplicate_line" },
-	{ "keys": ["alt+f11"], "command": "distraction_free_window" }
+	{ "keys": ["alt+f11"], "command": "distraction_free_window" },
+	{ "keys": ["alt+z"], "command": "undo" },
+
+	{
+	    "keys": ["enter"],
+	    "command": "copilot_accept_completion",
+	    "context": [
+        {
+            "key": "setting.copilot.completion.is_visible"
+        }
+    ]
+	},
+
+	{
+	    "keys": [
+	        "alt+;"
+	    ],
+	    "command": "copilot_previous_completion",
+	    "context": [
+	        {
+	            "key": "setting.copilot.completion.is_visible",
+	        }
+	    ]
+	},
+	{
+	    "keys": [
+	        "alt+'"
+	    ],
+	    "command": "copilot_next_completion",
+	    "context": [
+	        {
+	            "key": "setting.copilot.completion.is_visible"
+	        }
+	    ]
+	},
+		{ "keys": ["shift+escape"], "command": "single_selection", "context":
+		[
+			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
+		]
+	},
+	{ "keys": ["alt+s"], "command": "save", "args": { "async": true } },
+	{ "keys": ["alt+x"], "command": "cut" },
+	{ "keys": ["alt+c"], "command": "copy" },
+	{ "keys": ["alt+v"], "command": "paste" },
+	{ "keys": ["alt+'"], "command": "close" },
+	{ "keys": ["alt+0"], "command": "find_under_expand" },
+
 
 
 
