@@ -538,6 +538,9 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	},
 	{ "keys": ["alt+right"], "command": "travel_to_pane", "args": {"direction": "right"} },
 	{ "keys": ["alt+left"], "command": "travel_to_pane", "args": {"direction": "left"} },
+	{ "keys": ["super+o"], "command": "travel_to_pane", "args": {"direction": "right"} },
+	{ "keys": ["super+u"], "command": "travel_to_pane", "args": {"direction": "left"} },
+
 	{ "keys": ["alt+up"], "command": "travel_to_pane", "args": {"direction": "up"} },
 	{ "keys": ["alt+down"], "command": "travel_to_pane", "args": {"direction": "down"} },
 	// { "keys": ["alt+left"], "command": "focus_group", "args": { "group": 0 } },
@@ -585,9 +588,9 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 	{ "keys": ["ctrl+k", "ctrl+x"], "command": "swap_with_mark" },
 	{ "keys": ["ctrl+k", "ctrl+g"], "command": "clear_bookmarks", "args": {"name": "mark"} },
 
-	{ "keys": ["ctrl+equals"], "command": "increase_font_size" },
-	{ "keys": ["ctrl+plus"], "command": "increase_font_size" },
-	{ "keys": ["ctrl+minus"], "command": "decrease_font_size" },
+	// { "keys": ["ctrl+equals"], "command": "increase_font_size" },
+	// { "keys": ["ctrl+plus"], "command": "increase_font_size" },
+	// { "keys": ["ctrl+minus"], "command": "decrease_font_size" },
 
 
 	{ "keys": ["ctrl+shift+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
@@ -708,8 +711,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 		]
 	},
 
-    { "keys": ["alt+j"],"command": "move", "args": {"by": "words", "forward": false} },
-    { "keys": ["alt+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
+    { "keys": ["option+j"],"command": "move", "args": {"by": "words", "forward": false} },
+    { "keys": ["option+l"], "command": "move", "args": {"by": "word_ends", "forward": true} },
 
     { "keys": ["alt+i"], "command": "move", "args": {"by": "lines", "forward": false} },
     { "keys": ["alt+,"], "command": "move", "args": {"by": "lines", "forward": true} },
@@ -747,11 +750,8 @@ and don't need to be repeated here. Anything listed here will take precedence, h
     { "keys": ["ctrl+shift+j"], "command": "move", "args": {"by": "lines", "forward": false, "extend": true} },
     { "keys": ["ctrl+shift+l"], "command": "move", "args": {"by": "lines", "forward": true, "extend": true} },
     { "keys": ["f12"], "command": "goto_definition"},
-    // { "keys": ["alt+up"], "command": "swap_line_up" },
-    // { "keys": ["alt+down"], "command": "swap_line_down" },
     { "keys": ["ctrl+,"], "command": "enter"},
-
-
+	{ "keys": ["alt+g"], "command": "switch_file", "args": {"extensions": ["cpp", "cxx", "cc", "c", "hpp", "hxx", "hh", "h", "ipp", "inl", "m", "mm"]} },
 
 
     { "keys": ["ctrl+."], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
@@ -919,7 +919,7 @@ and don't need to be repeated here. Anything listed here will take precedence, h
 
 	{ "keys": ["ctrl+up"], "command": "scroll_lines", "args": {"amount": 1.0} },
 	{ "keys": ["ctrl+down"], "command": "scroll_lines", "args": {"amount": -1.0} },
-	{ "keys": ["alt+minus"], "command": "jump_back" },
+	// { "keys": ["alt+minus"], "command": "jump_back" },
 	// { "keys": ["ctrl+shift+minus"], "command": "jump_forward" },
     {
         "command": "navigate_to_definition",
@@ -1040,5 +1040,27 @@ and don't need to be repeated here. Anything listed here will take precedence, h
   	      ["focus_side_bar"],
   	    ]
   	}
+  },
+  {
+      "keys": ["f10"],
+      "command": "debugger",
+      "args": {
+          "action": "step_over"
+      }
+  },
+  {
+      "keys": ["f11"],
+      "command": "debugger",
+      "args": {
+          "action": "step_in"
+      }
+  },
+  {
+      "keys": ["shift+f11"],
+
+      "command": "debugger",
+      "args": {
+          "action": "step_out"
+      }
   },
 ]
